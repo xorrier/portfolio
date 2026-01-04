@@ -17,12 +17,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <GitHubActivity />
+      <Experience />
       <Skills />
       <Projects />
-      <Experience />
-      <Education />
+      <GitHubActivity />
       <CodingProfiles />
+      <Education />
       <Contact />
     </main>
   );
