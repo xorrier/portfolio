@@ -1,7 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaPhone,
+  FaTwitter,
+  FaDev,
+} from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 export default function Contact() {
   return (
@@ -54,8 +62,8 @@ export default function Contact() {
           >
             <FaPhone className="text-4xl text-blue-600" />
             <div className="text-left">
-              <p className="text-sm text-gray-400 font-semibold">Phone</p>
-              <p className="font-bold text-white">8910656177</p>
+              <p className="text-sm text-gray-600 font-semibold">Phone</p>
+              <p className="font-bold text-gray-900">8910656177</p>
             </div>
           </motion.a>
         </div>
@@ -65,7 +73,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="flex justify-center gap-6"
+          className="flex justify-center gap-4 flex-wrap"
         >
           <motion.a
             href="https://github.com/xorrier"
@@ -73,6 +81,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2, rotate: 5 }}
             className="w-16 h-16 bg-zinc-800 text-white rounded-full flex items-center justify-center hover:bg-zinc-700 transition border border-zinc-700"
+            title="GitHub"
           >
             <FaGithub className="text-2xl" />
           </motion.a>
@@ -82,9 +91,42 @@ export default function Contact() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2, rotate: -5 }}
             className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition border border-blue-500"
+            title="LinkedIn"
           >
             <FaLinkedin className="text-2xl" />
           </motion.a>
+          <motion.a
+            href="https://leetcode.com/sharmaamrit812/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2, rotate: 5 }}
+            className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition border border-orange-400"
+            title="LeetCode"
+          >
+            <SiLeetcode className="text-2xl" />
+          </motion.a>
+          {/* Optional: Add Twitter/X when available */}
+          {/* <motion.a
+            href="https://twitter.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2, rotate: -5 }}
+            className="w-16 h-16 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-600 transition border border-sky-400"
+            title="Twitter/X"
+          >
+            <FaTwitter className="text-2xl" />
+          </motion.a> */}
+          {/* Optional: Add Dev.to when available */}
+          {/* <motion.a
+            href="https://dev.to/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2, rotate: 5 }}
+            className="w-16 h-16 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition border border-gray-600"
+            title="Dev.to"
+          >
+            <FaDev className="text-2xl" />
+          </motion.a> */}
         </motion.div>
 
         <footer className="mt-16 pt-8 border-t border-zinc-800">

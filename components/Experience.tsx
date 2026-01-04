@@ -100,7 +100,7 @@ export default function Experience() {
                   </div>
                 </div>
 
-                {/* Highlights */}
+                {/* Key Highlights */}
                 <div className="mb-6 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                   {exp.highlights.map((highlight, i) => (
                     <div
@@ -113,15 +113,13 @@ export default function Experience() {
                   ))}
                 </div>
 
-                {/* Details - Collapsible section */}
-                <details className="group/details">
-                  <summary className="cursor-pointer text-blue-400 font-semibold hover:text-blue-300 transition mb-4 list-none flex items-center gap-2">
-                    <span className="transform group-open/details:rotate-90 transition-transform">
-                      ▶
-                    </span>
-                    View All Achievements
-                  </summary>
-                  <ul className="space-y-3 mt-4 pl-4 border-l-2 border-zinc-700">
+                {/* All Achievements - Visible by Default */}
+                <div className="mt-6">
+                  <h4 className="text-blue-400 font-semibold mb-4 flex items-center gap-2">
+                    <span className="text-xl">💼</span>
+                    Key Achievements & Contributions
+                  </h4>
+                  <ul className="space-y-3 pl-4 border-l-2 border-blue-500/30">
                     {exp.achievements.map((achievement, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <span className="text-blue-400 mt-1 text-lg">→</span>
@@ -131,7 +129,7 @@ export default function Experience() {
                       </li>
                     ))}
                   </ul>
-                </details>
+                </div>
               </div>
             </motion.div>
           ))}

@@ -8,7 +8,7 @@ export default function About() {
     { icon: FaCode, value: "3+", label: "Years Experience" },
     { icon: FaRocket, value: "1B+", label: "Documents Processed" },
     { icon: FaChartLine, value: "56%", label: "Cost Reduction" },
-    { icon: FaLightbulb, value: "500+", label: "Problems Solved" },
+    { icon: FaLightbulb, value: "500+", label: "DSA Problems Solved" },
   ];
 
   return (
@@ -31,39 +31,42 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-6"
           >
+            {/* Career Positioning Statement */}
+            <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-500/30 rounded-xl p-6 mb-6">
+              <p className="text-xl text-blue-300 font-semibold leading-relaxed">
+                I specialize in backend engineering and distributed systems for
+                high-throughput SaaS platforms — turning performance bottlenecks
+                into scalable solutions that reduce costs and increase
+                reliability.
+              </p>
+            </div>
+
             <div className="prose prose-invert max-w-none">
               <p className="text-xl text-gray-300 leading-relaxed">
                 I'm a{" "}
                 <span className="text-blue-400 font-semibold">
                   Software Development Engineer II
                 </span>{" "}
-                at bik.ai, specializing in building scalable, high-performance
-                backend systems. With expertise in{" "}
+                at bik.ai, building scalable, high-performance backend systems
+                with{" "}
                 <span className="text-purple-400 font-semibold">
                   Node.js, React, and AWS
                 </span>
-                , I transform complex technical challenges into elegant
+                . I transform complex technical challenges into elegant
                 solutions.
               </p>
 
               <p className="text-lg text-gray-400 leading-relaxed">
-                My passion lies in{" "}
-                <span className="text-blue-400 font-semibold">
-                  performance optimization
-                </span>{" "}
-                and cost reduction. I've successfully re-architected a 1TB
-                Elasticsearch cluster, reduced infrastructure costs by 56%, and
-                increased system throughput by 150%. I believe in writing clean,
-                maintainable code that not only solves today's problems but
-                scales for tomorrow's challenges.
+                I've re-architected a 1TB Elasticsearch cluster, reduced
+                infrastructure costs by 56%, and increased system throughput by
+                150%. I write clean, maintainable code that scales for
+                tomorrow's challenges.
               </p>
 
               <p className="text-lg text-gray-400 leading-relaxed">
-                Beyond coding, I'm an active problem solver on competitive
-                programming platforms, having solved 500+ problems on LeetCode
-                and achieved a 4★ rating on CodeChef. I enjoy learning new
-                technologies and contributing to the developer community through
-                open-source projects.
+                Active problem solver with 500+ LeetCode problems and a 4★
+                CodeChef rating. I contribute to open-source and enjoy exploring
+                new technologies.
               </p>
             </div>
 

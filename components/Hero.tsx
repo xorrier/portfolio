@@ -7,6 +7,7 @@ import {
   FaEnvelope,
   FaPhone,
   FaDownload,
+  FaUser,
 } from "react-icons/fa";
 
 export default function Hero() {
@@ -16,6 +17,23 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center pt-16 px-4 relative overflow-hidden bg-black"
     >
       <div className="max-w-4xl mx-auto text-center relative z-10">
+        {/* Professional Headshot Placeholder */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 shadow-2xl"
+        >
+          <div className="w-full h-full rounded-full bg-zinc-900 border-4 border-black overflow-hidden">
+            <img
+              src="/profile.jpeg"
+              alt="Amrit Sharma"
+              className="w-full h-full object-cover scale-110"
+              style={{ objectPosition: "center 20%" }}
+            />
+          </div>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
