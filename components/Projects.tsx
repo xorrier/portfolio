@@ -27,7 +27,9 @@ export default function Projects() {
       liveUrl: "https://xorrier.github.io/algo-visualizer/",
       githubUrl: "https://github.com/xorrier/algo-visualizer",
       gradient: "from-purple-600 to-pink-600",
-      screenshot: "/preveiw.png",
+      screenshot: `${
+        process.env.NODE_ENV === "production" ? "/portfolio" : ""
+      }/preveiw.png`,
     },
   ];
 

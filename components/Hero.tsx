@@ -26,7 +26,9 @@ export default function Hero() {
         >
           <div className="w-full h-full rounded-full bg-zinc-900 border-4 border-black overflow-hidden">
             <img
-              src="/profile.jpeg"
+              src={`${
+                process.env.NODE_ENV === "production" ? "/portfolio" : ""
+              }/profile.jpeg`}
               alt="Amrit Sharma"
               className="w-full h-full object-cover scale-110"
               style={{ objectPosition: "center 20%" }}
