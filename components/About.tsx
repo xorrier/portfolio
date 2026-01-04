@@ -65,8 +65,7 @@ export default function About() {
 
               <p className="text-lg text-gray-400 leading-relaxed">
                 Active problem solver with 500+ LeetCode problems and a 4★
-                CodeChef rating. I contribute to open-source and enjoy exploring
-                new technologies.
+                CodeChef rating. I enjoy exploring new technologies.
               </p>
             </div>
 
