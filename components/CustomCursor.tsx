@@ -1,46 +1,50 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isPointer, setIsPointer] = useState(false);
+  const cursorRef = useRef({ x: 0, y: 0 });
+  const currentPosRef = useRef({ x: 0, y: 0 });
+  const rafId = useRef<number>();
 
   useEffect(() => {
     const updateCursor = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      cursorRef.current = { x: e.clientX, y: e.clientY };
+    };
 
-      const target = e.target as HTMLElement;
-      setIsPointer(
-        window.getComputedStyle(target).cursor === "pointer" ||
-          target.tagName === "A" ||
-          target.tagName === "BUTTON"
-      );
+    const animate = () => {
+      // Smooth interpolation for the circle to follow cursor
+      const dx = cursorRef.current.x - currentPosRef.current.x;
+      const dy = cursorRef.current.y - currentPosRef.current.y;
+
+      currentPosRef.current.x += dx * 0.15;
+      currentPosRef.current.y += dy * 0.15;
+
+      setPosition({
+        x: currentPosRef.current.x,
+        y: currentPosRef.current.y,
+      });
+
+      rafId.current = requestAnimationFrame(animate);
     };
 
     window.addEventListener("mousemove", updateCursor);
-    return () => window.removeEventListener("mousemove", updateCursor);
+    rafId.current = requestAnimationFrame(animate);
+
+    return () => {
+      window.removeEventListener("mousemove", updateCursor);
+      if (rafId.current) cancelAnimationFrame(rafId.current);
+    };
   }, []);
 
   return (
-    <>
-      <div
-        className="custom-cursor"
-        style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-          transform: isPointer
-            ? "translate(-50%, -50%) scale(1.5)"
-            : "translate(-50%, -50%) scale(1)",
-        }}
-      />
-      <div
-        className="custom-cursor-dot"
-        style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-        }}
-      />
-    </>
+    <div
+      className="custom-cursor"
+      style={{
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+      }}
+    />
   );
 }
