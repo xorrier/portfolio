@@ -1,0 +1,110 @@
+\documentclass{resume} % Use the custom resume.cls style
+% \usepackage[defaultsans]{lato}
+% \renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{fontawesome}
+\usepackage{xcolor}
+
+\usepackage[left=0.4 in,top=0.2in,right=0.4 in,bottom=0.2in]{geometry}
+
+% ==== Contact Info Setup ====
+% GitHub
+\def\githubicon{\faGithub}
+\def\githublink{https://github.com/xorrier}
+% LinkedIn
+\def\linkedinicon{\faLinkedin}
+\def\linkedinlink{https://www.linkedin.com/in/amrit-sharma-h3rt5lw8/}
+% Mail
+\def\mailicon{\faEnvelope}
+\def\mailtext{sharmaamrit812@gmail.com}
+% Phone
+\def\phoneicon{\faPhone}
+\def\phonetext{8910656177}
+
+% ==== Name ====
+\name{Amrit Sharma} % Your name
+
+% ==== Contact Info Section ====
+\address{
+\textcolor{gray}{\phoneicon \hspace{3pt} \phonetext}
+\hspace{1.5em}
+\textcolor{gray}{\mailicon \hspace{3pt} \mailtext}
+\hspace{1.5em}
+\href{\linkedinlink}{\textcolor{gray}{\linkedinicon \hspace{3pt} LinkedIn}}
+\hspace{1.5em}
+\href{\githublink}{\textcolor{gray}{\githubicon \hspace{3pt} GitHub}}
+}
+
+\begin{document}
+\begin{rSection}{SKILLS}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{3ex}} l }
+Programming Languages: & TypeScript, JavaScript, Core Java \\
+Frameworks \& Libraries: & Node.js, Express.js, React.js, Redux, Next.js, Tailwind CSS, NestJS \\
+Databases: & MongoDB, PostgreSQL, ElasticSearch, DynamoDB, Neo4j, Typesense \\
+Cloud Services: & AWS (S3, SQS, Lambda, Step Functions), GCP Pub/Sub, Cloud Task \\
+Tools : & Docker, Git \\
+\end{tabular}
+\end{rSection}
+
+\begin{rSection}{EXPERIENCE}
+
+\textbf{bik.ai (Comida Technologies Pvt Ltd) | Bangalore, India} \hfill Aug 2023 – Present\\
+\emph{Software Development Engineer II}
+
+\begin{itemize}
+\itemsep -3pt{}
+
+\item Re-architected a \textbf{1TB Elasticsearch cluster} into multiple \textbf{100GB indices}, eliminating query timeouts and improving system stability under high-traffic workloads.
+
+    \item Reduced \textbf{infrastructure cost by 56\%} (saving \textbf{\$1700/month}) by migrating \textbf{95\%+ of 1B+ documents} to warm nodes using \textbf{ILM} and optimizing storage tiering.
+
+    \item \textbf{Horizontally scaled} the Elasticsearch cluster by adding additional nodes and rebalancing shards, improving query throughput and ensuring high availability.
+
+    \item Increased broadcast throughput by \textbf{150\% (20 → 50 msgs/sec)} and reduced latency by implementing \textbf{parallel batching} and cached \textbf{idempotency keys}, eliminating duplicate sends.
+
+    \item Built an \textbf{event-driven drip automation engine} generating follow-up broadcasts triggered by lifecycle events (sent, delivered, read), enabling automated targeted multi-step campaigns.
+
+\item Improved segmentation scalability by \textbf{183\% (0.6M → 1.7M+ customers)} by removing PostgreSQL timeouts on the customers table through \textbf{batched queries} combined with a \textbf{distributed caching layer}, preventing runtime failures.
+
+    \item Improved deliverability by \textbf{40\%} and reduced failures by \textbf{80\%} by implementing \textbf{automatic template duplication} for paused templates used in running broadcasts, preventing execution aborts.
+
+    \item Developed a \textbf{GDPR-compliant automated purge pipeline} enabling secure deletion of churned store data across \textbf{Elasticsearch, PostgreSQL, and Firebase}.
+
+    \item Built \textbf{React-based Email and WhatsApp Template Builders}, enabling Customer and Marketing teams to independently configure and launch campaigns.
+
+\end{itemize}
+
+\textbf{Appstone Pvt. Ltd. | Bhubaneswar, India} \hfill June 2022 - June 2023\\
+\emph{Associate Software Engineer}
+
+\begin{itemize}
+\itemsep -3pt {}
+\item Built NestJS microservices exposed via AWS API Gateway.
+\item Developed Auth (JWT + MongoDB), Neo4j referral graph, and Typesense search.
+\item Designed event-driven workflows using AWS SNS/SQS and integrated Novu and S3.
+\end{itemize}
+
+\textbf{Catapult Technologies Inc | Remote} \hfill Dec 2021 - May 2022\\
+\emph{Product Engineer}
+
+\begin{itemize}
+\itemsep -3pt {}
+\item Built a full-stack serverless application using \textbf{Next.js}, \textbf{Tailwind CSS}, and \textbf{Node.js on AWS Lambda}.
+\end{itemize}
+
+\end{rSection}
+
+\begin{rSection}{EDUCATION}
+{\bf Jalpaiguri Govt Engineering College} \hfill {2017 - 2021}\\
+B.Tech in Computer Science Engineering \hfill DGPA: 8.42
+\end{rSection}
+
+\begin{rSection}{CODING PROFILES}
+\textbf{\href{https://leetcode.com/sharmaamrit812/}{\textcolor{gray}{Leetcode (500+ problems solved)}}}
+\quad | \quad
+\textbf{\href{https://auth.geeksforgeeks.org/user/amrit_1998}{\textcolor{gray}{GeeksForGeeks (160+ problems)}}}
+\quad | \quad
+\textbf{\href{https://www.codechef.com/users/amrit999}{\textcolor{gray}{CodeChef (4\* max)}}}
+\end{rSection}
+
+\end{document}
